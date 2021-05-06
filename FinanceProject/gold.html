@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gold Loan</title>
+</head>
+<body>
+    <br><br><br>
+    <center><h2><b>!!!.....Gold Loan.....!!!</b></h2>
+    <br><br>
+    <b><i>Interest for Gold Loan is 1.5%</i></b></center>
+    <br><br>
+    <form >
+        <center><b>Enter Available Gram (Rs.3500/- per Gram) : </b>
+        <input type = "number" name = "gram" id = "gram" placeholder="Enter the Gram" required/>
+        <br><br>
+        <input type="submit" value="SUMBIT" onclick = "calculation()">
+        <br><br>
+        <b>Your are Eligible for the Loan Amount : <span id = "gramtotal"></span></b>
+        <br><br>
+        <b>Your Intrest per Month is : <span id = "inte1"></span></b>
+        <br><br>
+        <button><a href = "apply.html">APPLY</a></button>
+        <br><br>
+        <button><a href = "details.html">BACK</a></button>
+    </center>
+    </form>
+
+    <script>
+        function calculation(){
+            event.preventDefault();
+            let Gram = document.querySelector("#gram").value;
+            console.log(Gram);
+            if(Gram > 0 && Gram < 100 ){
+                let GramTotal = Gram * 3500;
+                console.log(GramTotal);
+                document.getElementById("gramtotal").innerHTML = GramTotal;
+                let goldinterest = (GramTotal * 1.5)/100;
+                console.log(goldinterest);
+                document.getElementById("inte1").innerHTML = goldinterest;    
+            }
+            else{
+            alert("Enter Valid Gram");
+             }
+        }
+       
+    </script>
+
+</body>
+</html>

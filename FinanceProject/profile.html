@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <style>
+    body {
+        background-image: url(https://64.media.tumblr.com/a5cadb39f870ad574352d35af61801b4/tumblr_p4qxiheC2f1uzwgsuo1_400.gifv);
+        }
+    div.b {
+        position: absolute;
+        left: 3px;
+        width: 300px;
+        height: 200px;
+      } 
+    </style>
+</head>
+<body>
+    <form>
+    <div class="b">
+    <img src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png" style="width:200px;height:200px;">
+    <br>
+    <h4><b>....Name....</b></h4>
+    <h5><b>DOB : DD-MM-YYYY</b></h5>
+    <h5><b>Address : No.1, 1st Street,</b></h5>
+    <h5><b>Main Road, Madurai-600005</b></h5>
+    </div>
+    <center>
+    <b>!!!.....Select the Type of Loan You Need.....!!!</b>
+    <br><br>
+    <select name="loan" id="loan">
+        <option disabled selected>select the Type</option>            
+        <option value="houseloan">House Loan</option>
+        <option value="educationalloan">Educational Loan</option>
+        <option value="personalloan">Personal Loan</option>  
+        <option value="goldloan">Gold Loan</option>
+        <option value="vehicleloan">Vehicle Loan</option>
+        <option value="agriloan">Agri Loan</option>
+    </select> 
+    <br><br>
+    <input type="submit" value="SUMBIT" onclick = "selection()">
+    </center>
+    </form>
+
+    <script>
+    function selection(){
+        event.preventDefault();
+        let Loan = document.querySelector("#loan").value;
+        if(Loan == "houseloan"){
+            location.replace("house.html");
+        }
+        else if(Loan == "educationalloan"){
+            location.replace("education.html");
+        }
+        else if(Loan == "personalloan"){
+            location.replace("personal.html");
+        }
+        else if(Loan == "goldloan"){
+            location.replace("gold.html");
+        }
+        else if(Loan == "vehicleloan"){
+            location.replace("vehicle.html");
+        }
+        else if(Loan == "agriloan"){
+            location.replace("agri.html");
+        }
+
+    }
+    
+    </script>
+
+</body>
+</html>

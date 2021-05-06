@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <style>
+        body {
+                    background-image: url(https://wallpaperaccess.com/full/1567838.jpg);
+                }
+    </style>
+</head>
+<body>
+    <center><h3><b><i>!!!...Login Form...!!!</i></b></h3></center>
+    <br>
+    <form>
+        <center><label for = "username">Enter UserName or Mail Id :</label>
+        <input type = "text" name ="username" id = "username"  placeholder="UserName or Mail Id" required/>
+        <br><br>
+        <label for = "password">Enter Password :</label>
+        <input type = "password" name = "password" id = "password" placeholder="Password" required/>
+        <br><br>
+        <input type = "button" value = "Login" onclick = "login()"></center>
+    </form>
+
+    <script>
+        function login(){
+            event.preventDefault();
+            let username = document.querySelector("#username").value;
+            if(username == "jeya" || username == "jeya04632@gmail.com" || username == "kirubapriya" || username == "kirubapriya.rangaraj@chainsys.com"){
+            let password = document.querySelector("#password").value;
+            if(password == "123456" && password.length >5){
+            alert("Successfully Logged In");
+            location.replace("details.html");
+            }
+            else{
+            alert("Enter Correct Password");
+            location.reload("login.html");
+            }
+            }
+            else{
+            alert("Invalid Username");
+            location.reload("login.html");
+            }      
+        }
+        
+    </script>
+
+</body>
+</html>

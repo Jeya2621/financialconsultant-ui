@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>House Loan</title>
+    <style>
+    div.b {
+        position: absolute;
+        left: 3px;
+        width: 500px;
+        height: 200px;
+      } 
+    </style>
+</head>
+<body>
+    <form>
+    <div class="b">
+      <br>
+      <b>!...House Loan Available and Interest Details as Per Amount...!</b>  
+      <br><br><br>
+      <table border = "1">
+          <thead>
+              <tr><th>!...Amount...!</th><th>!...Intrest...!</th></tr>
+          </thead>
+          <tbody>
+              <tr><td>10 Lakhs</td><td>2%</td></tr>
+              <tr><td>25 Lakhs</td><td>3%</td></tr>
+              <tr><td>50 Lakhs</td><td>5%</td></tr>
+          </tbody>
+      </table>
+      <br><br><br>
+      <b><i>Why House Loan in ABC ?</i></b>
+      <br>
+      <ul>
+          <li>Lower interest rate.</li>
+          <li>Tax benefits.</li>
+          <li>Reduced stamp duty.</li>
+      </ul>
+    </div>
+    <center>
+        <br><br><br><br><br><br><br><br><br>
+        <b>!!...Select the Amount You Need...!!</b>
+        <br><br>
+        <select name="Amount" id="Amount">
+                <option disabled selected>select Amount</option>            
+                <option value="1000000">10 Lakhs</option>
+                <option value="2500000">25 Lakhs</option>
+                <option value="5000000">50 Lakhs</option>
+        </select> 
+        <br><br>
+       <!-- <b>elected amount : <span id = "amount"></span></b>
+        <br><br>-->
+       <!-- <b>Debited amount from total amount : <span id="bal"> </span></b>
+        <br><br>-->
+        <input type="submit" value="SUMBIT" onclick = "calculation()">
+        <br><br>
+        <b>Your Intrest per Month is : <span id = "Interest1"></span></b>
+        <br><br>
+        <button><a href = "apply.html">APPLY</a></button>
+        <br><br>
+        <button><a href = "details.html">BACK</a></button>
+    </center>
+    </form>
+
+    <script>
+        function calculation(){
+            event.preventDefault();
+            let amount = document.querySelector("#Amount").value;
+            console.log(amount);
+            localStorage.setItem("Amount", amount);
+            if(amount == "1000000"){
+               // let amount = 1000000;
+               // let lienamt = 30000;
+                let interest = (amount * 2)/100;
+               // let bal = lienamt - interest;
+               // amount = amount - bal;
+               // localStorage.setItem("Balance", bal);
+               // localStorage.setItem("AMOUNT",amount);
+                //localStorage.setItem("Interest",interest);
+                console.log(interest);
+                //document.getElementById("bal").innerHTML = localStorage.getItem("Balance");
+               // document.getElementById("amount").innerHTML = localStorage.getItem("AMOUNT");
+                document.getElementById("Interest1").innerHTML = interest;
+                //alert("Your Request is Under Verification");
+            }
+            else if(amount == "2500000"){
+               // let lienamt = 150000;
+                let interest = (amount * 3)/100;
+               // let bal = lienamt - interest;
+                //amount = amount - bal;
+               // localStorage.setItem("Balance", bal);
+               // localStorage.setItem("AMOUNT",amount);
+                //localStorage.setItem("Interest",interest);
+                console.log(interest);
+               // document.getElementById("bal").innerHTML = localStorage.getItem("Balance");
+              //  document.getElementById("amount").innerHTML = localStorage.getItem("AMOUNT");
+                document.getElementById("Interest1").innerHTML = interest;
+                //alert("Your Request is Under Verification");
+            }
+            else if(amount == "5000000"){
+                //let lienamt = 550000;
+                let interest = (amount * 5)/100;
+               // let bal = lienamt - interest;
+               // amount = amount - bal;
+               // localStorage.setItem("Balance", bal);
+               // localStorage.setItem("AMOUNT",amount);
+                //localStorage.setItem("Interest",interest);
+                console.log(interest);
+               // document.getElementById("bal").innerHTML = localStorage.getItem("Balance");
+                //document.getElementById("amount").innerHTML = localStorage.getItem("AMOUNT");
+                document.getElementById("Interest1").innerHTML = interest;
+                //alert("Your Request is Under Verification");
+            }
+            else{
+                alert("Please Select the Amount");
+            }
+        }
+    
+    </script>
+</body>
+</html>

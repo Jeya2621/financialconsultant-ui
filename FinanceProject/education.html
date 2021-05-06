@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Education Loan</title>
+</head>
+<body>
+    <br><br><br>
+    <center><b>!!!.....Educational Loan.....!!!</b>
+    <br><br>
+    <b><i>Interest for Educational Loan is 2%</i></b></center>
+    <br><br>
+    <form >
+        <center><b>Enter Amount for Educational Loan (Max = 5 Lakhs) : </b>
+        <input type = "number" name = "eduamount" id = "eduamount" placeholder="Enter the Amount" required/>
+        <br><br>
+        <input type="submit" value="SUMBIT" onclick = "calculation()">
+        <br><br>
+        <b>Your Intrest per Month is : <span id = "inte1"></span></b>
+        <br><br>
+        <button><a href = "apply.html">APPLY</a></button>
+        <br><br>
+        <button><a href = "details.html">BACK</a></button>
+    </center>
+    </form>
+
+    <script>
+    function calculation(){
+        event.preventDefault();
+        let Eduamount = document.querySelector("#eduamount").value;
+        console.log(Eduamount);
+        if(Eduamount > 0 && Eduamount <= 500000){
+            let eduinterest = (Eduamount * 2)/100;
+            console.log(eduinterest);
+            document.getElementById("inte1").innerHTML = eduinterest;
+        }
+        else{
+            alert("Enter Valid Amount");
+        }
+    }
+    
+    </script>
+
+</body>
+</html>

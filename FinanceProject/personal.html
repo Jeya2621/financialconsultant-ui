@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Loan</title>
+</head>
+<body>
+    <br><br><br>
+    <center><h2><b>!!!.....Personal Loan.....!!!</b></h2>
+    <br><br>
+    <b><i>Interest for Personal Loan is 3%</i></b></center>
+    <br><br>
+    <form >
+        <center><b>Enter Amount for Personal Loan (Max = 10 Lakhs) : </b>
+        <input type = "number" name = "peramount" id = "peramount" placeholder="Enter the Amount" required/>
+        <br><br>
+        <input type="submit" value="SUMBIT" onclick = "calculation()">
+        <br><br>
+        <b>Your Intrest per Month is : <span id = "inte1"></span></b>
+        <br><br>
+        <button><a href = "apply.html">APPLY</a></button>
+        <br><br>
+        <button><a href = "details.html">BACK</a></button>
+    </center>
+    </form>
+
+    <script>
+        function calculation(){
+            event.preventDefault();
+            let Peramount = document.querySelector("#peramount").value;
+            console.log(Peramount);
+            if(Peramount > 0 && Peramount <= 1000000){
+                let perinterest = (Peramount * 3)/100;
+                console.log(perinterest);
+                document.getElementById("inte1").innerHTML = perinterest;
+            }
+            else{
+            alert("Enter Valid Amount");
+            }
+        }
+    
+    </script>
+
+</body>
+</html>
